@@ -1,0 +1,89 @@
+character.png
+size: 720, 720
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+вверх лево
+  rotate: false
+  xy: 0, 0
+  size: 122, 240
+  orig: 122, 240
+  offset: 0, 0
+  index: -1
+вверх право
+  rotate: false
+  xy: 122, 0
+  size: 121, 240
+  orig: 121, 240
+  offset: 0, 0
+  index: -1
+вверх
+  rotate: false
+  xy: 243, 0
+  size: 120, 240
+  orig: 120, 240
+  offset: 0, 0
+  index: -1
+вниз лево
+  rotate: false
+  xy: 363, 0
+  size: 122, 240
+  orig: 122, 240
+  offset: 0, 0
+  index: -1
+вниз право
+  rotate: false
+  xy: 485, 0
+  size: 121, 240
+  orig: 121, 240
+  offset: 0, 0
+  index: -1
+вниз
+  rotate: false
+  xy: 0, 240
+  size: 120, 240
+  orig: 120, 240
+  offset: 0, 0
+  index: -1
+лево лево
+  rotate: false
+  xy: 120, 240
+  size: 122, 240
+  orig: 122, 240
+  offset: 0, 0
+  index: -1
+лево право
+  rotate: false
+  xy: 242, 240
+  size: 121, 240
+  orig: 121, 240
+  offset: 0, 0
+  index: -1
+лево
+  rotate: false
+  xy: 363, 240
+  size: 120, 240
+  orig: 120, 240
+  offset: 0, 0
+  index: -1
+право лево
+  rotate: false
+  xy: 483, 240
+  size: 122, 240
+  orig: 122, 240
+  offset: 0, 0
+  index: -1
+право право
+  rotate: false
+  xy: 0, 480
+  size: 121, 240
+  orig: 121, 240
+  offset: 0, 0
+  index: -1
+право
+  rotate: false
+  xy: 121, 480
+  size: 120, 240
+  orig: 120, 240
+  offset: 0, 0
+  index: -1
