@@ -4,7 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="" />
+    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/SourceSansPro.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/checkbox-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/checkbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-export.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-export.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title-export.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title-export.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-biohazard-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-biohazard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-electricity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-gas-mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-laser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-poison.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-radiation-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-radiation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/list.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/progress-bar-knob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/progress-bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/radio-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/scrollbar.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/scrollbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box-pressed.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box-pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/slider-knob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/slider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/split-pane.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/textfield.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/textfield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/title-bg.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/title-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/touchpad-knob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/touchpad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/window.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/window.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/font-export.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/font-title-export.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/character.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/character.tps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/character.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,10 +87,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/libgdx-example-01.06" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pksY6xC5HLDpEIWEQp33xnQtgI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,9 +101,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myGame\core\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myGame\core\assets" />
     </key>
   </component>
@@ -100,5 +169,32 @@
       <updated>1615738499107</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/libgdx-example-01.06" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
