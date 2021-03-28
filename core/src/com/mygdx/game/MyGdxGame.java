@@ -15,19 +15,23 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture img;
 	OrthographicCamera camera;
 	TextureAtlas character;
-	TextureAtlas goblin;
+	TextureAtlas wrag1Texture;
+	static Texture Turret;
 	boolean loader = false;
-	screen sc;
-	public static float red =0.1f;
-	public static float blue =0.4f;
-	public static float green =0.4f;
+	static screen sc;
+	public static float red =0f;
+	public static float blue =0f;
+	public static float green =0f;
+	static Texture load;
+
+
 	@Override
 	public void create () {
-
+		Turret = new Texture("Turet.png");
+		load = new Texture("loaddd2.jpg");
 		character= new TextureAtlas("character.txt");
-		goblin= new TextureAtlas("goblin.txt");
+		wrag1Texture= new TextureAtlas("wrag1.txt");
 		batch = new SpriteBatch();
-		img = new Texture("loaddd.jpg");
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
   sc=new screen();
@@ -48,7 +52,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 
 
-		 sc.render(batch,character,goblin);
+		 sc.render(batch,character,wrag1Texture,load);
 
 
 		batch.end();
@@ -57,7 +61,12 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
+		wrag1Texture.dispose();
 character.dispose();
+load.dispose();
+Turret.dispose();
+		Player.skinText.dispose();
+		Player.skin.dispose();
+		screen.skin.dispose();
 	}
 }

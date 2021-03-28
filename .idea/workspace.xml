@@ -4,69 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="">
+    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="add goblin, character, and ferst ii">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_ai_1_8_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_bullet_1_9_13_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_ai_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_bullet_1_9_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_bullet_platform_1_9_13_natives_desktop.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/SourceSansPro.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/checkbox-off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/checkbox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-export.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title-export.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/font.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-biohazard-large.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-biohazard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-electricity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-gas-mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-laser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-poison.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-radiation-large.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-radiation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/icon-warning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/list.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/list.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/progress-bar-knob.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/progress-bar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/radio-off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/radio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/scrollbar.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/scrollbar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box-pressed.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box-pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/select-box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/slider-knob.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/slider.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/split-pane.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/textfield.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/textfield.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/title-bg.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/title-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/touchpad-knob.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/touchpad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/window.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/raw/window.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/biological-attack-ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/font-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/biological-attack/skin/font-title-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/character.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/character.tps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/character.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/goblin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/goblin.tps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/goblin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/preview.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.json" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +50,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="dark_PK &lt;7vadim7spb2003@gmail.com&gt;" />
+        <option value="7vadim7spb2003@gmail.com" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pksY6xC5HLDpEIWEQp33xnQtgI" />
@@ -101,11 +75,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myGame\core\assets" />
+      <recent name="D:\myGame" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myGame\core\assets" />
@@ -168,6 +143,21 @@
       <option name="presentableId" value="Default" />
       <updated>1615738499107</updated>
     </task>
+    <task id="LOCAL-00001" summary="add goblin, character, and ferst ii">
+      <created>1616244533507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616244533507</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add goblin, character, and ferst ii">
+      <created>1616244926551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616244926551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +176,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/libgdx-example-01.06" />
     </ignored-roots>
+    <MESSAGE value="add goblin, character, and ferst ii" />
+    <option name="LAST_COMMIT_MESSAGE" value="add goblin, character, and ferst ii" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -196,5 +188,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

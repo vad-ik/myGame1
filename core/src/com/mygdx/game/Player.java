@@ -8,15 +8,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import jdk.vm.ci.amd64.AMD64;
+import org.w3c.dom.Text;
 
 public class Player {
+
     int xp;
     String Name;
     int lvl;
@@ -26,15 +25,65 @@ static int Falg=1;
     static boolean a;
     static boolean s;
     static boolean d;
+
     static public int x;
     static public int y;
-
+    static public int l;
+    static ProgressBar lifeBar;
+    static TextField socerText;
+    static TextField moneyText;
+    static Stage stage2 ;
+  Table table = new Table();
+    static Skin skin;
+    static Skin skinText;
+    static String socerForInt;
+static String moneyForInt;
+static TextButton Update;
     public Player(String name) {
+
+        stage2 = new Stage(new ScreenViewport());
+        Gdx.input.setInputProcessor(stage2);
+
+        table.setPosition(-280,100);
+        table.setFillParent(true);
+        skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
+        skinText = new Skin(Gdx.files.internal("terra-mother/skin/terra-mother-ui.json"));
+        lifeBar = new ProgressBar(0,100,1,false,skin);
+
+
+
+       socerForInt = ("socer: "+screen.score);
+       moneyForInt = ("money: "+screen.money);
+
+         Update= new TextButton("Update",skin);
+   socerText=new TextField(socerForInt,skinText);
+   moneyText=new TextField(moneyForInt,skinText);
+
+        table.add(Update).fillX();
+        table.row().pad(10, 0, 10, 0);
+        table.add(lifeBar).fillX();
+        table.row().pad(10, 0, 10, 0);
+        table.add(socerText).fillX();
+        table.row().pad(10, 0, 10, 0);
+        table.add(moneyText).fillX();
+        table.row().pad(10, 0, 10, 0);
+        stage2.addActor(table);
+
+        Update.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+
+                screen.UpDateMenFlag=true;
+                System.out.println("sa");
+            }
+        });
+
+
         this.xp = 0;
         Name = name;
         this.lvl = 1;
         life = 100;
-
+        lifeBar.setValue(100);
 x=380;
 y=200;
         w=false;
@@ -46,9 +95,14 @@ y=200;
 
     public static void move(Batch batch, TextureAtlas character) {
 lifeRender(life);
+        stage2.act();
 
+        stage2.draw();
 
-
+        if((Gdx.input.isKeyPressed(Input.Keys.SPACE))&&(screen.money>0)) {
+screen.TuretArray.add(new Turet(x,y));
+screen.money--;
+        }
 
 
 
@@ -208,44 +262,21 @@ sprite.setSize(40,80);
 
 
     static void lifeRender(int life){
-        Stage stage = new Stage(new ScreenViewport());
-        Gdx.input.setInputProcessor(stage);
+        if (!moneyText.getText().equals("money: " + String.valueOf(screen.money))) {
 
-        Table table = new Table();
-        //table.setFillParent(true);
-        table.setPosition(180,400);
-        Skin skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
-        ProgressBar lifee = new ProgressBar(0,100,1,false,skin);
-lifee.act(life);
-
-
-                // TextButton lifee = new TextButton("New Game", skin);
-
-        table.add(lifee).fill(0.3f,0.3f);
-        table.row().pad(10, 0, 10, 0);
-        stage.addActor(table);
-        stage.act();
-        stage.draw();
-
-//        lifee.addListener(new ChangeListener() {
-//            @Override
-//            public void changed(ChangeEvent event, Actor actor) {
-//                Gdx.app.exit();
-//            }
-//        });
+        socerForInt= ("socer: "+String.valueOf(screen.score));
+        socerText.setText(socerForInt);
+        moneyForInt= ("money: "+String.valueOf(screen.money));
+        moneyText.setText(moneyForInt);
     }
+        if (l!=life) {
+            lifeBar.setValue(life);
+            l=life;
+        }
 
 
 
-
-
-
-
-
-
-
-
-
+    }
 
 
 
