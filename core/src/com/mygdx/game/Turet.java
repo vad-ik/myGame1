@@ -1,26 +1,31 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
 public class Turet {
-    int xp;
-    int dmg;
-    int range;
-    int timer;
+
+    static int dmg;
+    static int range;
+    static float timer;
 int cordX;
 int cordY;
-int reloading;
+float reloading=0;
+
 
 Texture TuretTexture;
     public Turet(int cordX,int cordY) {
-        this.xp = screen.updateMenu.xp;
+        screen.TuretHP.add( screen.updateMenu.xp);
         this.dmg = screen.updateMenu.dmg;
         this.range =screen.updateMenu.range;
         this.cordX=cordX;
         this.cordY=cordY;
         this.timer = screen.updateMenu.timer;
         this.TuretTexture=MyGdxGame.Turret;
+
 this.reloading=0;
     }
 int shot (int x,int y){
@@ -32,20 +37,28 @@ int shot (int x,int y){
 
         return retur;
 }
-void fight(){
-        xp--;
+void fight(int index){
+    screen.TuretHP.set(index,screen.TuretHP.get(index)-1)  ;
 
 }
 
 
 
     void Drav(Batch batch,int index){
-        if (xp<=0){
-            screen.TuretArray.remove(index);
-        }
+
+if (screen.TuretHP.get(index)<=0){
+    screen.TuretArray.remove(index);
+    screen.TuretHP.remove(index);
+    screen.player.turetColVo--;
+
+}else  batch.draw(TuretTexture,cordX-screen.xMir,cordY-screen.yMir,40,40);
+
         if(reloading>0){
+
 reloading--;}
-        batch.draw(TuretTexture,cordX,cordY,40,40);
+
+
+
 
     };
 

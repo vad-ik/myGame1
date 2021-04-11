@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="add goblin, character, and ferst ii">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_ai_1_8_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_bullet_1_9_13_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_ai_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_bullet_1_9_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gdx_bullet_platform_1_9_13_natives_desktop.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/android/myGame.android.iml" afterDir="false" />
+    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="add texture random , turet money и т д">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/goblin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/goblin.tps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/goblin.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/preview.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button-pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/raw/button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.json" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/assets/pixthulhu/skin/pixthulhu-ui.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Turet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Turet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/UpdateMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/UpdateMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/assets" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
@@ -157,7 +138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616244926551</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add texture random , turet money и т д">
+      <created>1616944122968</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616944122968</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add texture random , turet money и т д">
+      <created>1616944220114</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616944220114</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,7 +172,8 @@
       <path value="$PROJECT_DIR$/libgdx-example-01.06" />
     </ignored-roots>
     <MESSAGE value="add goblin, character, and ferst ii" />
-    <option name="LAST_COMMIT_MESSAGE" value="add goblin, character, and ferst ii" />
+    <MESSAGE value="add texture random , turet money и т д" />
+    <option name="LAST_COMMIT_MESSAGE" value="add texture random , turet money и т д" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

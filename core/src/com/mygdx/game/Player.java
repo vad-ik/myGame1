@@ -25,26 +25,26 @@ static int Falg=1;
     static boolean a;
     static boolean s;
     static boolean d;
-
+static int turetColVo;
     static public int x;
     static public int y;
     static public int l;
+    static int TuretLimit;
     static ProgressBar lifeBar;
     static TextField socerText;
     static TextField moneyText;
-    static Stage stage2 ;
-  Table table = new Table();
+    static TextField turetLImitText;
+    static Table table = new Table();
     static Skin skin;
     static Skin skinText;
     static String socerForInt;
 static String moneyForInt;
-static TextButton Update;
+ TextButton Update;
+
     public Player(String name) {
-
-        stage2 = new Stage(new ScreenViewport());
-        Gdx.input.setInputProcessor(stage2);
-
-        table.setPosition(-280,100);
+        turetColVo=0;
+        TuretLimit=10;
+        table.setPosition(-280,75);
         table.setFillParent(true);
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
         skinText = new Skin(Gdx.files.internal("terra-mother/skin/terra-mother-ui.json"));
@@ -58,6 +58,8 @@ static TextButton Update;
          Update= new TextButton("Update",skin);
    socerText=new TextField(socerForInt,skinText);
    moneyText=new TextField(moneyForInt,skinText);
+String turetlimText = ("Turret "+turetColVo+"/"+TuretLimit);
+        turetLImitText=new TextField(turetlimText,skinText);
 
         table.add(Update).fillX();
         table.row().pad(10, 0, 10, 0);
@@ -67,14 +69,17 @@ static TextButton Update;
         table.row().pad(10, 0, 10, 0);
         table.add(moneyText).fillX();
         table.row().pad(10, 0, 10, 0);
-        stage2.addActor(table);
+        table.add(turetLImitText).fillX();
+        table.row().pad(10, 0, 10, 0);
 
         Update.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
 
-                screen.UpDateMenFlag=true;
-                System.out.println("sa");
+
+                screen.stage.clear();
+                screen.stage.addActor(screen.updateMenu.table);
+        screen.UpDateMenFlag=true;
             }
         });
 
@@ -94,17 +99,21 @@ y=200;
     }
 
     public static void move(Batch batch, TextureAtlas character) {
-lifeRender(life);
-        stage2.act();
+        TuretLimit=screen.updateMenu.turetLimit;
+        String turetlimText = ("Turret "+turetColVo+"/"+TuretLimit);
+turetLImitText.setText(turetlimText);
 
-        stage2.draw();
 
-        if((Gdx.input.isKeyPressed(Input.Keys.SPACE))&&(screen.money>0)) {
-screen.TuretArray.add(new Turet(x,y));
-screen.money--;
+        screen.stage.addActor(table);
+        lifeRender(life);
+        screen.stage.act();
+
+        screen.stage.draw();
+
+        if((Gdx.input.isKeyPressed(Input.Keys.SPACE))&&(screen.money>0)&&(turetColVo<TuretLimit)) {
+screen.TuretArray.add(new Turet(x+screen.xMir,y+screen.yMir));
+screen.money--;turetColVo++;
         }
-
-
 
 
 
@@ -113,7 +122,10 @@ screen.money--;
             a=false;
             s=false;
             d=false;
-            if(y<400){y=y+10;}
+            if(y<400){y=y+10;}else {
+                screen.yMir+=10;
+
+            }
             if (Falg==1){
 
                 drawSprite(batch,character,"wa");
@@ -150,6 +162,8 @@ screen.money--;
                 d=false;
 if(x>0) {
     x = x - 10;
+}else {
+    screen.xMir-=10;
 }
 if (Falg==1){
 
@@ -180,7 +194,10 @@ if (Falg==1){
                     a=false;
                     s=true;
                     d=false;
-                 if(y>0){   y=y-10;}
+                 if(y>0){   y=y-10;}else {
+
+                     screen.yMir-=10;
+                 }
                 if (Falg==1){
 
                     drawSprite(batch,character,"sa");
@@ -207,11 +224,14 @@ if (Falg==1){
 
                 }else
             if(Gdx.input.isKeyPressed(Input.Keys.D)){
+
                         w=false;
                         a=false;
                         s=false;
                         d=true;
-                       if(x<760){ x=x+10;}
+                       if(x<760){ x=x+10;}else {
+                           screen.xMir+=10;
+                       }
                 if (Falg==1){
 
                     drawSprite(batch,character,"da");
