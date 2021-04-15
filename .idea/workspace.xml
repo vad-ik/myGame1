@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="add texture random , turet money и т д">
+    <list default="true" id="0cd80bfd-720b-487e-b54b-0339e8496d83" name="Default Changelist" comment="добавлены 2 ур врага бекграунд прокачка">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/assets/Turet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Turet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Turet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/UpdateMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/UpdateMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Wrag1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="myGame" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616944220114</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add texture random , turet money и т д">
+      <created>1618122971359</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618122971359</updated>
+    </task>
+    <task id="LOCAL-00006" summary="добавлены 2 ур врага бекграунд прокачка">
+      <created>1618123028138</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618123028138</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +207,8 @@
     </ignored-roots>
     <MESSAGE value="add goblin, character, and ferst ii" />
     <MESSAGE value="add texture random , turet money и т д" />
-    <option name="LAST_COMMIT_MESSAGE" value="add texture random , turet money и т д" />
+    <MESSAGE value="добавлены 2 ур врага бекграунд прокачка" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены 2 ур врага бекграунд прокачка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

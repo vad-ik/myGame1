@@ -1,68 +1,75 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 public class Turet {
 
     static int dmg;
     static int range;
     static float timer;
-int cordX;
-int cordY;
-float reloading=0;
+    int cordX;
+    int cordY;
+    float reloading = 0;
+double rotation=0;
+
+    TextureAtlas TuretTexture;
+
+    public Turet(int cordX, int cordY) {
+        Screen.TuretHP.add(Screen.updateMenu.xp);
+        this.dmg = Screen.updateMenu.dmg;
+        this.range = Screen.updateMenu.range;
+        this.cordX = cordX;
+        this.cordY = cordY;
+        this.timer = Screen.updateMenu.timer;
+this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
 
 
-Texture TuretTexture;
-    public Turet(int cordX,int cordY) {
-        screen.TuretHP.add( screen.updateMenu.xp);
-        this.dmg = screen.updateMenu.dmg;
-        this.range =screen.updateMenu.range;
-        this.cordX=cordX;
-        this.cordY=cordY;
-        this.timer = screen.updateMenu.timer;
-        this.TuretTexture=MyGdxGame.Turret;
-
-this.reloading=0;
+        this.reloading = 0;
     }
-int shot (int x,int y){
+
+    int shot(int x, int y) {
         int retur = 0;
-        if ((cordY-y<range)&&(cordY-y>-1*range)&&(reloading==0)&&(cordX-x<range)&&(cordX-x>-1*range)){
-            retur =dmg;
-            reloading=timer;
+        if (( cordY - y < range ) && ( cordY - y > -1 * range ) && ( reloading == 0 ) && ( cordX - x < range ) && ( cordX - x > -1 * range )) {
+            retur = dmg;
+            reloading = timer;
+
+ rotation  = Math.atan2(cordY - y, cordX - x) / Math.PI * 180;
+            rotation = (rotation < 0) ? rotation + 180 : rotation;
         }
 
         return retur;
-}
-void fight(int index){
-    screen.TuretHP.set(index,screen.TuretHP.get(index)-1)  ;
+    }
 
-}
+    void fight(int index) {
+        Screen.TuretHP.set(index, Screen.TuretHP.get(index) - 1);
 
-
-
-    void Drav(Batch batch,int index){
-
-if (screen.TuretHP.get(index)<=0){
-    screen.TuretArray.remove(index);
-    screen.TuretHP.remove(index);
-    screen.player.turetColVo--;
-
-}else  batch.draw(TuretTexture,cordX-screen.xMir,cordY-screen.yMir,40,40);
-
-        if(reloading>0){
-
-reloading--;}
+    }
 
 
+    void Drav(Batch batch, int index) {
 
+        if (Screen.TuretHP.get(index) <= 0) {
+            Screen.TuretArray.remove(index);
+            Screen.TuretHP.remove(index);
+            Screen.player.turetColVo--;
 
-    };
+        } else {
 
+            String name= String.valueOf((int)(rotation / 30)*30);
 
+            System.out.println(rotation);
+            Sprite sprite = TuretTexture.createSprite(name);
 
+            sprite.setPosition(cordX - Screen.xMir, cordY - Screen.yMir);
+            sprite.setSize(40, 40);
+            sprite.draw(batch);
+        }
+        if (reloading > 0) {
 
+            reloading--;
+        }
+    }
 }
