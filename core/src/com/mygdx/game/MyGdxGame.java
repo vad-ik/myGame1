@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 public class MyGdxGame extends ApplicationAdapter {
     SpriteBatch batch;
-    OrthographicCamera camera;
+    static OrthographicCamera camera;
     static TextureAtlas character;
 
     static Screen screen;
@@ -42,8 +42,16 @@ public class MyGdxGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         screen.render(batch, character, load);
+
+
+
+
         batch.end();
+
     }
+
+
+
 
     @Override
     public void dispose() {

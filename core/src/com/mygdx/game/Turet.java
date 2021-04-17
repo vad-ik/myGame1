@@ -1,9 +1,11 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class Turet {
 
@@ -38,6 +40,17 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
 
  rotation  = Math.atan2(cordY - y, cordX - x) / Math.PI * 180;
             rotation = (rotation < 0) ? rotation + 180 : rotation;
+
+
+
+//          ShapeRenderer sr = new ShapeRenderer();
+//          sr.setColor(Color.RED);
+//            sr.setProjectionMatrix(MyGdxGame.camera.combined);
+//
+//            sr.begin(ShapeRenderer.ShapeType.Filled);
+//            sr.rectLine(cordX+10,cordY+10,x+10,y+10,0.5f);
+//            sr.end();
+
         }
 
         return retur;
@@ -59,8 +72,6 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
         } else {
 
             String name= String.valueOf((int)(rotation / 30)*30);
-
-            System.out.println(rotation);
             Sprite sprite = TuretTexture.createSprite(name);
 
             sprite.setPosition(cordX - Screen.xMir, cordY - Screen.yMir);

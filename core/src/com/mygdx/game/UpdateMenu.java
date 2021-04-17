@@ -19,11 +19,10 @@ public class UpdateMenu {
         table.setFillParent(true);
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
         this.xp = 10;
-       // this.dmg = 1;
-        this.dmg = 1000;
+        this.dmg = 1;
         this.range = 100;
-        //this.timer = 50;
-        this.timer = 1;
+        this.timer = 50;
+        //this.timer = 1;
         this.turetLimit = 20;
 
 

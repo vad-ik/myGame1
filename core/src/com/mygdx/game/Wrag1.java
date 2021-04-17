@@ -186,8 +186,13 @@ public class Wrag1 {
         } else if (Screen.WragStrong.get(index) == 3) {
             sprite = wrag3.createSprite(tip + name);
         }
-       // System.out.println(x+" "+ Screen.xMir+" "+y +" "+Screen.yMir);
-        sprite.setPosition(x - Screen.xMir, y - Screen.yMir);
+
+        try {
+            sprite.setPosition(x - Screen.xMir, y - Screen.yMir);
+        }
+        catch (NullPointerException e) {
+            System.out.println(x+" "+ Screen.xMir+" "+y +" "+Screen.yMir);
+        }
 
         sprite.setSize(50, 50);
         if (Screen.WragStrong.get(index) == 2) {

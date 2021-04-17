@@ -105,38 +105,11 @@ public class Screen {
 
 
     static void render(Batch batch, TextureAtlas character, Texture load) {
-
-        SkinsChangeMenu(batch);
+        if (skinsFlag) {
+            SkinsChangeMenu(batch);
+        }
         if (player.life <= 0) {
-            TotalMoney += money;
-            stage.clear();
-            StartFlag = true;
-            newgame.setText("you died. start a new game?");
-            MyGdxGame.blue = 0f;
-            MyGdxGame.green = 0f;
-            MyGdxGame.red = 0f;
-            player.life = 100;
-            player.x = 380;
-            player.y = 200;
-            sloznost = 10;
-            WragX.clear();
-            WragY.clear();
-            WragFlag.clear();
-            WragTextureWid.clear();
-            WragLive.clear();
-            TuretArray.clear();
-            stage.addActor(table);
-            stage.addActor(table2Levl);
-            TuretHP.clear();
-            xMir = 0;
-            yMir = 0;
-            money = 10;
-            player.turetColVo = 0;
-            updateMenu.xp = 10;
-            updateMenu.dmg = 1;
-            updateMenu.range = 100;
-            updateMenu.timer = 50;
-            updateMenu.turetLimit = 10;
+           dead();
         }
 
         if (( StartFlag ) && ( !skinsFlag )) {
@@ -145,19 +118,13 @@ public class Screen {
             if (sloznost > 0) {
                 if (( sloznost < 30 ) && ( WragX.size() < 10 )) {
                     WragGenerate();
-                    sloznost--;
                 } else if (( ( sloznost < 100 ) && ( WragX.size() < 50 ) )) {
                     WragGenerate();
-                    sloznost--;
                     Wrag2Generator();
-                    sloznost -= 10;
                 } else if (( ( sloznost < 300 ) )) {
                     WragGenerate();
-                    sloznost--;
                     Wrag2Generator();
-                    sloznost -= 10;
                     Wrag3Generator();
-                    sloznost -= 100;
                 }
 
             }
@@ -169,6 +136,38 @@ public class Screen {
         }
 
 
+    }
+
+    private static void dead() {
+        TotalMoney += money;
+        stage.clear();
+        StartFlag = true;
+        newgame.setText("you died. start a new game?");
+        MyGdxGame.blue = 0f;
+        MyGdxGame.green = 0f;
+        MyGdxGame.red = 0f;
+        player.life = 100;
+        player.x = 380;
+        player.y = 200;
+        sloznost = 10;
+        WragX.clear();
+        WragY.clear();
+        WragFlag.clear();
+        WragTextureWid.clear();
+        WragLive.clear();
+        TuretArray.clear();
+        stage.addActor(table);
+        stage.addActor(table2Levl);
+        TuretHP.clear();
+        xMir = 0;
+        yMir = 0;
+        money = 10;
+        player.turetColVo = 0;
+        updateMenu.xp = 10;
+        updateMenu.dmg = 1;
+        updateMenu.range = 100;
+        updateMenu.timer = 50;
+        updateMenu.turetLimit = 10;
     }
 
     static void Play(Batch batch, TextureAtlas character) {
@@ -204,6 +203,8 @@ public class Screen {
 
 
     static void WragGenerate() {
+
+        sloznost -= 1;
         Random random = new Random();
         int position_x = random.nextInt(200);
         int position_y = random.nextInt(200);
@@ -228,6 +229,8 @@ public class Screen {
     }
 
     static void Wrag2Generator() {
+
+        sloznost -= 10;
         Random random = new Random();
         int position_x = random.nextInt(200);
         int position_y = random.nextInt(200);
@@ -254,6 +257,8 @@ public class Screen {
     }
 
     static void Wrag3Generator() {
+
+        sloznost -= 100;
         Random random = new Random();
         int position_x = random.nextInt(200);
         int position_y = random.nextInt(200);
@@ -280,7 +285,7 @@ public class Screen {
     }
 
     static void SkinsChangeMenu(Batch batch) {
-        if (skinsFlag) {
+
             if (skinsFlagws) {
                 stage.clear();
                 skinsFlagws = false;
@@ -290,7 +295,7 @@ public class Screen {
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
             Skins.render(batch);
-        }
+
     }
 
 }
