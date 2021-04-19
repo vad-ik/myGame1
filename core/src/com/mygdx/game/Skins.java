@@ -15,11 +15,12 @@ public class Skins {
     static Table table = new Table();
     static TextureAtlas character1;
     static TextureAtlas character2;
+int colVoSkinsConstant =2;
 
     public Skins() {
 
 
-        table.setPosition(-70, -180);
+        table.setPosition(0,Gdx.graphics.getHeight()/-3);
         table.setFillParent(true);
 
         character1 = new TextureAtlas("character.txt");
@@ -27,23 +28,21 @@ public class Skins {
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
         TextButton skin1 = new TextButton("set", skin);
         TextButton skin2 = new TextButton("set", skin);
-        //TextButton skin3 = new TextButton("set", skin);
         TextButton out = new TextButton("out", skin);
 
 
         table.add(out).fillX();
         table.add(skin1).fillX();
         table.add(skin2).fillX();
-        // table.add(skin3).fillX();
-        // table.add(skin4).fillX();
         table.row().pad(10, 0, 10, 0);
 
         skin1.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 MyGdxGame.character = character1;
-                MyGdxGame.PlayerWith = 60;
-                MyGdxGame.Playerheight = 90;
+                MyGdxGame.PlayerWith= Gdx.graphics.getWidth()/15;
+
+                MyGdxGame.Playerheight = Gdx.graphics.getHeight()/8;
                 MyGdxGame.PlayerCdvig = 0;
             }
         });
@@ -51,20 +50,11 @@ public class Skins {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 MyGdxGame.character = new TextureAtlas("character2.txt");
-                MyGdxGame.PlayerWith = 100;
-                MyGdxGame.Playerheight = 90;
+                MyGdxGame.PlayerWith = Gdx.graphics.getWidth()/10;
+                MyGdxGame.Playerheight = Gdx.graphics.getHeight()/5;
                 MyGdxGame.PlayerCdvig = 30;
             }
         });
-//        skin3.addListener(new ChangeListener() {
-//            @Override
-//            public void changed(ChangeEvent event, Actor actor) {
-//                MyGdxGame.character = new TextureAtlas("character3.txt");
-//                MyGdxGame.PlayerWith = 100;
-//                MyGdxGame.Playerheight = 90;
-//                MyGdxGame.PlayerCdvig = 30;
-//            }
-//        });
 
         out.addListener(new ChangeListener() {
             @Override
@@ -87,12 +77,12 @@ public class Skins {
         Screen.stage.draw();
         Sprite sprite = character1.createSprite("s");
 
-        sprite.setPosition(288, 130);
+        sprite.setPosition(Gdx.graphics.getWidth()/2+80*(colVoSkinsConstant+1)/2-80*(colVoSkinsConstant-0), Gdx.graphics.getHeight()/-3+Gdx.graphics.getHeight()/3*2);
         sprite.setSize(100, 170);
         sprite.draw(batch);
         sprite = character2.createSprite("s");
 
-        sprite.setPosition(372, 95);
+        sprite.setPosition(Gdx.graphics.getWidth()/2+80*(colVoSkinsConstant+1)/2-80*(colVoSkinsConstant-1), Gdx.graphics.getHeight()/-3+Gdx.graphics.getHeight()/3*2);
         sprite.setSize(160, 170);
         sprite.draw(batch);
 

@@ -177,7 +177,7 @@ public class Wrag1 {
 
     private static void drawSprite(Batch batch, String name, int index) {
 
-        Sprite sprite = wrag1.createSprite(tip + name);
+        Sprite sprite = wrag1.createSprite(tip);
 
         if (Screen.WragStrong.get(index) == 1) {
             sprite = wrag1.createSprite(tip + name);
@@ -187,19 +187,16 @@ public class Wrag1 {
             sprite = wrag3.createSprite(tip + name);
         }
 
-        try {
-            sprite.setPosition(x - Screen.xMir, y - Screen.yMir);
-        }
-        catch (NullPointerException e) {
-            System.out.println(x+" "+ Screen.xMir+" "+y +" "+Screen.yMir);
-        }
 
-        sprite.setSize(50, 50);
+            sprite.setPosition(x - Screen.xMir, y - Screen.yMir);
+
+
+        sprite.setSize(Gdx.graphics.getWidth()/14, Gdx.graphics.getHeight()/12);
         if (Screen.WragStrong.get(index) == 2) {
-            sprite.setSize(50, 80);
+            sprite.setSize(Gdx.graphics.getWidth()/14, Gdx.graphics.getHeight()/6);
         }
         if (Screen.WragStrong.get(index) == 3) {
-            sprite.setSize(50, 80);
+            sprite.setSize(Gdx.graphics.getWidth()/14, Gdx.graphics.getHeight()/6);
         }
 
 

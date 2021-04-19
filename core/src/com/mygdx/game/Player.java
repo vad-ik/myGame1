@@ -41,9 +41,9 @@ public class Player {
 
     public Player() {
 
-        tableStats.setPosition(-280, 75);
+        tableStats.setPosition(-Gdx.graphics.getWidth()/3, Gdx.graphics.getHeight()/80*15);
         tableStats.setFillParent(true);
-        tableControl.setPosition(0, -150);
+        tableControl.setPosition(0, -Gdx.graphics.getHeight()/3);
         tableControl.setFillParent(true);
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
         skinText = new Skin(Gdx.files.internal("terra-mother/skin/terra-mother-ui.json"));
@@ -53,7 +53,7 @@ public class Player {
         turetButon = new ImageButton(skin);
 
 
-        tableControl.add(touchpad).fillX().pad(0, 0, 0, 500);
+        tableControl.add(touchpad).fillX().pad(0, 0, 0, Gdx.graphics.getWidth()/8*5);
         tableControl.add(turetButon).fillX();
 
 
@@ -105,8 +105,8 @@ public class Player {
         TuretLimit = 10;
         life = 100;
         lifeBar.setValue(100);
-        x = 380;
-        y = 200;
+        x = Gdx.graphics.getWidth()/2;
+        y = Gdx.graphics.getHeight()/2;
         LastSideW = false;
         LastSideA = false;
         LastSideS = true;
@@ -118,13 +118,9 @@ public class Player {
         PlayerController();
 
 
-        TuretLimit = Screen.updateMenu.turetLimit;
-        String turetlimText = ( "Turret " + turetColVo + "/" + TuretLimit );
-        turetLImitText.setText(turetlimText);
 
 
-        Screen.stage.addActor(tableStats);
-        Screen.stage.addActor(tableControl);
+
         changeStats(life);
         Screen.stage.act();
         Screen.stage.draw();
@@ -134,7 +130,6 @@ public class Player {
     }
 
     private static void PlayerController() {
-        // touchpad.getKnobX() выдает положение джостика, в стартовом положении 81.0
 
         double Xthis = ( ( touchpad.getKnobX() - touchpad.getKnobY() ) / Math.sqrt(2) );
         double Ythis = ( ( touchpad.getKnobX() + touchpad.getKnobY() - 162 ) / Math.sqrt(2) );
@@ -178,7 +173,7 @@ public class Player {
             LastSideA = false;
             LastSideS = false;
             LastSideD = false;
-            if (y < 400) {
+            if (y < Gdx.graphics.getHeight()-MyGdxGame.Playerheight) {
                 y = y + 10;
             } else {
                 Screen.yMir += 10;
@@ -277,7 +272,7 @@ public class Player {
             LastSideA = false;
             LastSideS = false;
             LastSideD = true;
-            if (x < 760) {
+            if (x < Gdx.graphics.getWidth()-MyGdxGame.PlayerWith) {
                 x = x + 10;
             } else {
                 Screen.xMir += 10;
@@ -326,13 +321,16 @@ public class Player {
 
 
     static void changeStats(int life) {
-        if (!moneyText.getText().equals("money: " + String.valueOf(Screen.money))) {
+        TuretLimit = Screen.updateMenu.turetLimit;
+        String turetlimText = ( "Turret " + turetColVo + "/" + TuretLimit );
+        turetLImitText.setText(turetlimText);
+
 
             socerForInt = ( "socer: " + String.valueOf(Screen.score) );
             socerText.setText(socerForInt);
             moneyForInt = ( "money: " + String.valueOf(Screen.money) );
             moneyText.setText(moneyForInt);
-        }
+
         lifeBar.setValue(life);
     }
 }

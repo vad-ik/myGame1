@@ -56,9 +56,9 @@ public class Screen {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
-        table.setPosition(0, -40);
+        table.setPosition(0, -Gdx.graphics.getWidth()/15);
         table.setFillParent(true);
-        table2Levl.setPosition(0, -150);
+        table2Levl.setPosition(0, -Gdx.graphics.getWidth()/15-120);
         table2Levl.setFillParent(true);
 
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
@@ -89,6 +89,9 @@ public class Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 stage.clear();
+
+                stage.addActor(player.tableStats);
+               stage.addActor(player.tableControl);
                 StartFlag = false;
                 MyGdxGame.red = 1f;
                 MyGdxGame.green = 0.5f;
@@ -150,6 +153,7 @@ public class Screen {
         player.x = 380;
         player.y = 200;
         sloznost = 10;
+        WragStrong.clear();
         WragX.clear();
         WragY.clear();
         WragFlag.clear();
@@ -161,20 +165,20 @@ public class Screen {
         TuretHP.clear();
         xMir = 0;
         yMir = 0;
-        money = 10;
+        money = 60;
         player.turetColVo = 0;
-        updateMenu.xp = 10;
-        updateMenu.dmg = 1;
-        updateMenu.range = 100;
-        updateMenu.timer = 50;
-        updateMenu.turetLimit = 10;
-    }
+        updateMenu= new UpdateMenu();
+
+
+        }
 
     static void Play(Batch batch, TextureAtlas character) {
 
 
-        batch.draw(backgraund, 0, 0, 800, 480);
 
+
+
+        batch.draw(backgraund, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         for (int i = 0; i < WragX.size(); i++) {
 
             Wrag1.move(batch, WragX.get(i), WragY.get(i), i, WragTextureWid.get(i));
@@ -184,18 +188,19 @@ public class Screen {
 
             TuretArray.get(i).Drav(batch, i);
         }
+
+
+
+        player.Play(batch, character);
         try {
             Thread.sleep(( 100 ));
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-
-        player.Play(batch, character);
-
     }
 
     static void StartMenu(Batch batch, Texture load) {
-        batch.draw(load, 300, 270, 200, 200);
+        batch.draw(load, Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/15*2, Gdx.graphics.getHeight()/9*5, Gdx.graphics.getWidth()/15*4, Gdx.graphics.getWidth()/15*4);
         stage.act();
         stage.draw();
 
@@ -212,12 +217,12 @@ public class Screen {
         if (position_x < 100) {
             position_x = -80 - position_x + xMir;
         } else {
-            position_x = 870 + position_x + xMir;
+            position_x = Gdx.graphics.getHeight() + position_x + xMir;
         }
         if (position_y < 100) {
             position_y = -60 - position_y + yMir;
         } else {
-            position_y = 499 + position_y + yMir;
+            position_y = Gdx.graphics.getWidth() + position_y + yMir;
         }
         WragTextureWid.add(wragTextur);
         WragFlag.add(1);
@@ -238,12 +243,12 @@ public class Screen {
         if (position_x < 100) {
             position_x = -80 - position_x + xMir;
         } else {
-            position_x = 870 + position_x + xMir;
+            position_x = Gdx.graphics.getHeight() + position_x + xMir;
         }
         if (position_y < 100) {
             position_y = -60 - position_y + yMir;
         } else {
-            position_y = 499 + position_y + yMir;
+            position_y = Gdx.graphics.getWidth() + position_y + yMir;
         }
 
         WragTextureWid.add(wragTextur);
@@ -266,12 +271,12 @@ public class Screen {
         if (position_x < 100) {
             position_x = -80 - position_x + xMir;
         } else {
-            position_x = 870 + position_x + xMir;
+            position_x = Gdx.graphics.getHeight() + position_x + xMir;
         }
         if (position_y < 100) {
             position_y = -60 - position_y + yMir;
         } else {
-            position_y = 499 + position_y + yMir;
+            position_y = Gdx.graphics.getWidth() + position_y + yMir;
         }
 
         WragTextureWid.add(wragTextur);

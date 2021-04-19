@@ -40,7 +40,8 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
 
  rotation  = Math.atan2(cordY - y, cordX - x) / Math.PI * 180;
             rotation = (rotation < 0) ? rotation + 180 : rotation;
-
+            rotation+=180;
+            if (rotation>=360){rotation-=360;}
 
 
 //          ShapeRenderer sr = new ShapeRenderer();
@@ -75,7 +76,7 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
             Sprite sprite = TuretTexture.createSprite(name);
 
             sprite.setPosition(cordX - Screen.xMir, cordY - Screen.yMir);
-            sprite.setSize(40, 40);
+            sprite.setSize(Gdx.graphics.getWidth()/15, Gdx.graphics.getHeight()/10);
             sprite.draw(batch);
         }
         if (reloading > 0) {

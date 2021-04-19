@@ -16,6 +16,8 @@ public class UpdateMenu {
 
 
     public UpdateMenu() {
+        table.clear();
+        table.setPosition(0,0);
         table.setFillParent(true);
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
         this.xp = 10;
@@ -23,7 +25,7 @@ public class UpdateMenu {
         this.range = 100;
         this.timer = 50;
         //this.timer = 1;
-        this.turetLimit = 20;
+        this.turetLimit = 100;
 
 
         table.pad(10).defaults().expandX().space(4);
@@ -125,6 +127,8 @@ public class UpdateMenu {
             public void changed(ChangeEvent event, Actor actor) {
                 Screen.stage.clear();
                 Screen.UpDateMenFlag = false;
+               Screen.stage.addActor( Screen.player.tableStats);
+                Screen.stage.addActor( Screen.player.tableControl);
             }
         });
 
