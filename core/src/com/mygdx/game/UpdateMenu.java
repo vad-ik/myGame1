@@ -129,6 +129,8 @@ public class UpdateMenu {
                 Screen.UpDateMenFlag = false;
                Screen.stage.addActor( Screen.player.tableStats);
                 Screen.stage.addActor( Screen.player.tableControl);
+
+                Screen.stage.addActor( Screen.player.tableName);
             }
         });
 

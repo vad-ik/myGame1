@@ -44,13 +44,9 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
             if (rotation>=360){rotation-=360;}
 
 
-//          ShapeRenderer sr = new ShapeRenderer();
-//          sr.setColor(Color.RED);
-//            sr.setProjectionMatrix(MyGdxGame.camera.combined);
-//
-//            sr.begin(ShapeRenderer.ShapeType.Filled);
-//            sr.rectLine(cordX+10,cordY+10,x+10,y+10,0.5f);
-//            sr.end();
+
+            MyGdxGame.sr.rectLine(cordX+10,cordY+10,x+10,y+10,1f);
+
 
         }
 

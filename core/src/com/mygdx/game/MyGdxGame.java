@@ -3,17 +3,19 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class MyGdxGame extends ApplicationAdapter {
     SpriteBatch batch;
     static OrthographicCamera camera;
     static TextureAtlas character;
-    Music Music;
+    static Music Music;
     static Screen screen;
     public static float red = 0f;
     public static float blue = 0f;
@@ -23,12 +25,13 @@ public class MyGdxGame extends ApplicationAdapter {
     public static int Playerheight;
     public static int PlayerCdvig;
 
-
+    public static ShapeRenderer sr;
     @Override
     public void create() {
         Music = Gdx.audio.newMusic(Gdx.files.internal("them.ogg"));
         Music.setLooping(true);
         Music.play();
+        Music.setVolume(0.5f);
         Playerheight = Gdx.graphics.getHeight()/8;
         PlayerWith = Gdx.graphics.getWidth()/15;
         load = new Texture("loaddd2.jpg");
@@ -38,20 +41,24 @@ public class MyGdxGame extends ApplicationAdapter {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
         screen = new Screen();
+        sr = new ShapeRenderer();
+        sr.setColor(Color.RED);
+        sr.setProjectionMatrix(MyGdxGame.camera.combined);
     }
 
     @Override
     public void render() {
         Gdx.gl.glClearColor(red, green, blue, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
+        batch.begin();  sr.begin(ShapeRenderer.ShapeType.Filled);
         screen.render(batch, character, load);
 
 
 
 
-        batch.end();
 
+        batch.end();
+        sr.end();
     }
 
 

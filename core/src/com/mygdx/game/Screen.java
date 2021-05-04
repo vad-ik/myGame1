@@ -7,9 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
@@ -18,12 +16,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Screen {
+
     static int money;
     static boolean UpDateMenFlag;
     static int score;
     static Stage stage;
     static boolean StartFlag = true;
-    static Player player = new Player();
+    static Player player;
     static int sloznost = 10;
     static TextButton newgame;
     static Table table = new Table();
@@ -47,38 +46,54 @@ public class Screen {
     static boolean skinsFlag = false;
     static boolean skinsFlagws = true;
     static Skins Skins = new Skins();
-
+    static TextField name;
     public Screen() {
 
+        skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
+        name = new TextField("player",skin );
+        player = new Player();
         updateMenu = new UpdateMenu();
         score = 0;
         money = 60;
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
-
         table.setPosition(0, -Gdx.graphics.getWidth()/15);
         table.setFillParent(true);
         table2Levl.setPosition(0, -Gdx.graphics.getWidth()/15-120);
         table2Levl.setFillParent(true);
 
-        skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
-        newgame = new TextButton("New Game", skin);
+       newgame = new TextButton("New Game", skin);
 
 
         TextButton out = new TextButton("Exit", skin);
+        TextButton multiplayer = new TextButton("multiplayer", skin);
 
         TextButton skins = new TextButton("Skins", skin);
+        final TextButton musicOff = new TextButton("Music off", skin);
 
 
         table.add(newgame).fillX();
-        table.row().pad(10, 0, 10, 0);
-        table2Levl.add(out).pad(0, 0, 0, 5);
 
+        table.add(multiplayer).fillX();
+        table.row().pad(10, 0, 10, 0);
+        table2Levl.add(musicOff);
+        table2Levl.add(out);
         table2Levl.add(skins);
+        table2Levl.add(name).fillY();
         stage.addActor(table);
         stage.addActor(table2Levl);
 
-
+musicOff.addListener(new ChangeListener() {
+    @Override
+    public void changed(ChangeEvent event, Actor actor) {
+        if (   MyGdxGame.Music.getVolume()!=0){
+        MyGdxGame.Music.setVolume(0);
+        musicOff.setText("Music on");} else{
+            MyGdxGame.Music.setVolume(0.5f);
+            musicOff.setText("Music off");
+        }
+    }
+});
         out.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
@@ -92,10 +107,12 @@ public class Screen {
 
                 stage.addActor(player.tableStats);
                stage.addActor(player.tableControl);
+                stage.addActor( player.tableName);
                 StartFlag = false;
                 MyGdxGame.red = 1f;
                 MyGdxGame.green = 0.5f;
                 MyGdxGame.blue = 0f;
+                player.nameText.setText(name.getText());
             }
         });
         skins.addListener(new ChangeListener() {
@@ -108,6 +125,7 @@ public class Screen {
 
 
     static void render(Batch batch, TextureAtlas character, Texture load) {
+
         if (skinsFlag) {
             SkinsChangeMenu(batch);
         }
@@ -296,8 +314,6 @@ public class Screen {
                 skinsFlagws = false;
                 stage.addActor(Skins.table);
             }
-            Gdx.gl.glClearColor(0, 0, 0, 1);
-            Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
             Skins.render(batch);
 

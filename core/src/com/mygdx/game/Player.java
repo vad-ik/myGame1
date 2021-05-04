@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -27,9 +28,11 @@ public class Player {
     static int TuretLimit;
     static ProgressBar lifeBar;
     static TextField socerText;
+    static TextField nameText;
     static TextField moneyText;
     static TextField turetLImitText;
     static Table tableStats = new Table();
+    static Table tableName = new Table();
     static Table tableControl = new Table();
     static Skin skin;
     static Skin skinText;
@@ -43,6 +46,8 @@ public class Player {
 
         tableStats.setPosition(-Gdx.graphics.getWidth()/3, Gdx.graphics.getHeight()/80*15);
         tableStats.setFillParent(true);
+        tableName.setPosition(0, 0);
+        tableName.setFillParent(true);
         tableControl.setPosition(0, -Gdx.graphics.getHeight()/3);
         tableControl.setFillParent(true);
         skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
@@ -75,9 +80,10 @@ public class Player {
         Update = new TextButton("Update", skin);
         socerText = new TextField(socerForInt, skinText);
         moneyText = new TextField(moneyForInt, skinText);
+        nameText = new TextField(Screen.name.getText(),skinText);
         String turetlimText = ( "Turret " + turetColVo + "/" + TuretLimit );
         turetLImitText = new TextField(turetlimText, skinText);
-
+        tableName.add(nameText).fillX();
         tableStats.add(Update).fillX();
         tableStats.row().pad(0, 0, 10, 0);
         tableStats.add(lifeBar).fillX();
@@ -316,6 +322,7 @@ public class Player {
         sprite.setPosition(x - MyGdxGame.PlayerCdvig, y);
         sprite.setSize(MyGdxGame.PlayerWith, MyGdxGame.Playerheight);
         sprite.draw(batch);
+        tableName.setPosition((Gdx.graphics.getWidth()/-2)+x- MyGdxGame.PlayerCdvig+80 ,y-Gdx.graphics.getHeight()/2-10);
 
     }
 
