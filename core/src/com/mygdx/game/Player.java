@@ -1,8 +1,6 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -10,107 +8,45 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
+import java.util.ArrayList;
+
 public class Player {
+    static ArrayList<Turet> TuretArray = new ArrayList<>();
+    static ArrayList<Integer> WragX = new ArrayList<>();
+    static ArrayList<Integer> WragY = new ArrayList<>();
+    static ArrayList<Integer> WragTextureWid = new ArrayList<>();
+    static ArrayList<Integer> WragFlag = new ArrayList<>();
+    static ArrayList<Integer> TuretHP = new ArrayList<>();
+    static int xMir;
+    static int yMir;
+    static ArrayList<Integer> WragLive = new ArrayList<>();
+    static ArrayList<Integer> WragStrong = new ArrayList<>();
+
+
+    public static TextField nameText;
+    TextureAtlas character;
     static boolean SideW;
     static boolean SideA;
     static boolean SideS;
     static boolean SideD;
-
-    static int life;
     static int Falg = 1;
     static boolean LastSideW;
     static boolean LastSideA;
     static boolean LastSideS;
     static boolean LastSideD;
-    static int turetColVo;
     static public int x;
     static public int y;
-    static int TuretLimit;
-    static ProgressBar lifeBar;
-    static TextField socerText;
-    static TextField nameText;
-    static TextField moneyText;
-    static TextField turetLImitText;
-    static Table tableStats = new Table();
-    static Table tableName = new Table();
-    static Table tableControl = new Table();
-    static Skin skin;
-    static Skin skinText;
-    static String socerForInt;
-    static String moneyForInt;
-    TextButton Update;
-    static ImageButton turetButon;
-    static Touchpad touchpad;
 
+   static int life;
+    String dravPosition;
     public Player() {
+        character=MyGdxGame.character;
+dravPosition="w";
 
-        tableStats.setPosition(-Gdx.graphics.getWidth()/3, Gdx.graphics.getHeight()/80*15);
-        tableStats.setFillParent(true);
-        tableName.setPosition(0, 0);
-        tableName.setFillParent(true);
-        tableControl.setPosition(0, -Gdx.graphics.getHeight()/3);
-        tableControl.setFillParent(true);
-        skin = new Skin(Gdx.files.internal("pixthulhu/skin/pixthulhu-ui.json"));
-        skinText = new Skin(Gdx.files.internal("terra-mother/skin/terra-mother-ui.json"));
-        lifeBar = new ProgressBar(0, 100, 1, false, skin);
-
-        touchpad = new Touchpad(6, skin);
-        turetButon = new ImageButton(skin);
-
-
-        tableControl.add(touchpad).fillX().pad(0, 0, 0, Gdx.graphics.getWidth()/8*5);
-        tableControl.add(turetButon).fillX();
-
-
-        turetButon.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                if (( Screen.money > 0 ) && ( turetColVo < TuretLimit )) {
-                    Screen.TuretArray.add(new Turet(x + Screen.xMir, y + Screen.yMir));
-                    Screen.money--;
-                    turetColVo++;
-                }
-
-            }
-        });
-
-        socerForInt = ( "socer: " + Screen.score );
-        moneyForInt = ( "money: " + Screen.money );
-
-        Update = new TextButton("Update", skin);
-        socerText = new TextField(socerForInt, skinText);
-        moneyText = new TextField(moneyForInt, skinText);
-        nameText = new TextField(Screen.name.getText(),skinText);
-        String turetlimText = ( "Turret " + turetColVo + "/" + TuretLimit );
-        turetLImitText = new TextField(turetlimText, skinText);
-        tableName.add(nameText).fillX();
-        tableStats.add(Update).fillX();
-        tableStats.row().pad(0, 0, 10, 0);
-        tableStats.add(lifeBar).fillX();
-        tableStats.row().pad(0, 0, 10, 0);
-        tableStats.add(socerText).fillX();
-        tableStats.row().pad(0, 0, 10, 0);
-        tableStats.add(moneyText).fillX();
-        tableStats.row().pad(0, 0, 10, 0);
-        tableStats.add(turetLImitText).fillX();
-        tableStats.row().pad(0, 0, 10, 0);
-
-        Update.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-
-
-                Screen.stage.clear();
-                Screen.stage.addActor(Screen.updateMenu.table);
-
-                Screen.UpDateMenFlag = true;
-            }
-        });
-
-        turetColVo = 0;
-        TuretLimit = 10;
+        Screen.turetColVo = 0;
+        Screen.TuretLimit = 10;
         life = 100;
-        lifeBar.setValue(100);
+
         x = Gdx.graphics.getWidth()/2;
         y = Gdx.graphics.getHeight()/2;
         LastSideW = false;
@@ -120,7 +56,7 @@ public class Player {
 
     }
 
-    public static void Play(Batch batch, TextureAtlas character) {
+    public void Play() {
         PlayerController();
 
 
@@ -130,15 +66,15 @@ public class Player {
         changeStats(life);
         Screen.stage.act();
         Screen.stage.draw();
-        Move(batch, character);
+        Move();
 
 
     }
 
     private static void PlayerController() {
 
-        double Xthis = ( ( touchpad.getKnobX() - touchpad.getKnobY() ) / Math.sqrt(2) );
-        double Ythis = ( ( touchpad.getKnobX() + touchpad.getKnobY() - 162 ) / Math.sqrt(2) );
+        double Xthis = ( (  Screen.touchpad.getKnobX() -  Screen.touchpad.getKnobY() ) / Math.sqrt(2) );
+        double Ythis = ( (  Screen.touchpad.getKnobX() +  Screen.touchpad.getKnobY() - 162 ) / Math.sqrt(2) );
         if (( Xthis == 0 ) && ( Ythis == 0 )) {
             SideA = false;
             SideS = false;
@@ -168,7 +104,7 @@ public class Player {
 
     }
 
-    static void Move(Batch batch, TextureAtlas character) {
+    void Move() {
 
 
 
@@ -182,26 +118,26 @@ public class Player {
             if (y < Gdx.graphics.getHeight()-MyGdxGame.Playerheight) {
                 y = y + 10;
             } else {
-                Screen.yMir += 10;
+                yMir += 10;
 
             }
             if (Falg == 1) {
 
-                drawSprite(batch, character, "wa");
+                dravPosition=( "wa");
                 Falg = 2;
             } else if (Falg == 2) {
 
-                drawSprite(batch, character, "w");
+                dravPosition=( "w");
 
                 Falg = 3;
             } else if (Falg == 3) {
 
 
-                drawSprite(batch, character, "wd");
+                dravPosition=( "wd");
                 Falg = 4;
             } else if (Falg == 4) {
 
-                drawSprite(batch, character, "w");
+                dravPosition=( "w");
 
                 Falg = 1;
             }
@@ -215,25 +151,25 @@ public class Player {
             if (x > 0) {
                 x = x - 10;
             } else {
-                Screen.xMir -= 10;
+                xMir -= 10;
             }
             if (Falg == 1) {
 
-                drawSprite(batch, character, "aa");
+                dravPosition=("aa");
                 Falg = 2;
             } else if (Falg == 2) {
 
-                drawSprite(batch, character, "a");
+                dravPosition=( "a");
 
                 Falg = 3;
             } else if (Falg == 3) {
 
 
-                drawSprite(batch, character, "ad");
+                dravPosition=( "ad");
                 Falg = 4;
             } else if (Falg == 4) {
 
-                drawSprite(batch, character, "a");
+                dravPosition=( "a");
 
                 Falg = 1;
             }
@@ -248,25 +184,25 @@ public class Player {
                 y = y - 10;
             } else {
 
-                Screen.yMir -= 10;
+                yMir -= 10;
             }
             if (Falg == 1) {
 
-                drawSprite(batch, character, "sa");
+                dravPosition=( "sa");
                 Falg = 2;
             } else if (Falg == 2) {
 
-                drawSprite(batch, character, "s");
+                dravPosition=( "s");
 
                 Falg = 3;
             } else if (Falg == 3) {
 
 
-                drawSprite(batch, character, "sd");
+                dravPosition=("sd");
                 Falg = 4;
             } else if (Falg == 4) {
 
-                drawSprite(batch, character, "s");
+                dravPosition=( "s");
 
                 Falg = 1;
             }
@@ -281,63 +217,68 @@ public class Player {
             if (x < Gdx.graphics.getWidth()-MyGdxGame.PlayerWith) {
                 x = x + 10;
             } else {
-                Screen.xMir += 10;
+                xMir += 10;
             }
             if (Falg == 1) {
 
-                drawSprite(batch, character, "da");
+                dravPosition=( "da");
                 Falg = 2;
             } else if (Falg == 2) {
 
-                drawSprite(batch, character, "d");
+                dravPosition=( "d");
 
                 Falg = 3;
             } else if (Falg == 3) {
 
 
-                drawSprite(batch, character, "dd");
+                dravPosition=( "dd");
                 Falg = 4;
             } else if (Falg == 4) {
 
-                drawSprite(batch, character, "d");
+                dravPosition=( "d");
 
                 Falg = 1;
             }
 
         } else if (LastSideS) {
-            drawSprite(batch, character, "s");
+            dravPosition=( "s");
         } else if (LastSideW) {
-            drawSprite(batch, character, "w");
+            dravPosition=( "w");
         } else if (LastSideA) {
-            drawSprite(batch, character, "a");
+            dravPosition=( "a");
         } else if (LastSideD) {
-            drawSprite(batch, character, "d");
+            dravPosition=("d");
         }
 
     }
 
-    private static void drawSprite(Batch batch, TextureAtlas textureAtlas, String name) {
-        Sprite sprite = textureAtlas.createSprite(name);
+     void drawSprite(Batch batch ) {
+         TextureAtlas textureAtlas=character;
+         String name=dravPosition;
 
+        Sprite sprite = textureAtlas.createSprite(name);
         sprite.setPosition(x - MyGdxGame.PlayerCdvig, y);
         sprite.setSize(MyGdxGame.PlayerWith, MyGdxGame.Playerheight);
         sprite.draw(batch);
-        tableName.setPosition((Gdx.graphics.getWidth()/-2)+x- MyGdxGame.PlayerCdvig+80 ,y-Gdx.graphics.getHeight()/2-10);
+      //   System.out.println(name+" "+MyGdxGame.PlayerWith+" "+ MyGdxGame.Playerheight+" "+x+" "+y+" ");
+         Screen.tableName.setPosition((Gdx.graphics.getWidth()/-2)+x- MyGdxGame.PlayerCdvig+80 ,y-Gdx.graphics.getHeight()/2-10);
 
     }
-
 
     static void changeStats(int life) {
-        TuretLimit = Screen.updateMenu.turetLimit;
-        String turetlimText = ( "Turret " + turetColVo + "/" + TuretLimit );
-        turetLImitText.setText(turetlimText);
+        Screen.TuretLimit = Screen.updateMenu.turetLimit;
+        String turetlimText = ( "Turret " +  Screen.turetColVo + "/" +  Screen.TuretLimit );
+        Screen.turetLImitText.setText(turetlimText);
 
 
-            socerForInt = ( "socer: " + String.valueOf(Screen.score) );
-            socerText.setText(socerForInt);
-            moneyForInt = ( "money: " + String.valueOf(Screen.money) );
-            moneyText.setText(moneyForInt);
+        Screen.socerForInt = ( "socer: " + String.valueOf(Screen.score) );
+        Screen.socerText.setText( Screen.socerForInt);
+        Screen.moneyForInt = ( "money: " + String.valueOf(Screen.money) );
+        Screen.moneyText.setText( Screen.moneyForInt);
 
-        lifeBar.setValue(life);
+        Screen.lifeBar.setValue(life);
     }
+
+
+
 }

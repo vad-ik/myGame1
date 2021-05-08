@@ -60,8 +60,8 @@ public class UpdateMenu {
                     Screen.money -= 10;
                     xp = xp + 10;
                     xpButton.setText("update xp 10 coins. " + xp);
-                    for (int i = 0; i < Screen.TuretArray.size(); i++) {
-                        Screen.TuretHP.set(i, Screen.TuretHP.get(i) + 10);
+                    for (int i = 0; i < Screen.player.TuretArray.size(); i++) {
+                        Screen.player.TuretHP.set(i, Screen.player.TuretHP.get(i) + 10);
                     }
                 }
             }
@@ -74,8 +74,8 @@ public class UpdateMenu {
                     Screen.money -= 10;
                     dmg = dmg + 1;
                     dmgButton.setText("update dmg 10 coins. " + dmg);
-                    for (int i = 0; i < Screen.TuretArray.size(); i++) {
-                        Screen.TuretArray.get(i).dmg += 1;
+                    for (int i = 0; i < Screen.player.TuretArray.size(); i++) {
+                        Screen.player.TuretArray.get(i).dmg += 1;
                     }
                 }
             }
@@ -88,8 +88,8 @@ public class UpdateMenu {
                     Screen.money -= 10;
                     range = range + 10;
                     rangeButton.setText("update range 10 coins. " + range);
-                    for (int i = 0; i < Screen.TuretArray.size(); i++) {
-                        Screen.TuretArray.get(i).range += 1;
+                    for (int i = 0; i < Screen.player.TuretArray.size(); i++) {
+                        Screen.player.TuretArray.get(i).range += 1;
                     }
                 }
             }
@@ -102,8 +102,8 @@ public class UpdateMenu {
                     Screen.money -= 10;
                     timer -= ( timer * 0.05 );
                     timerButton.setText("update reloading 10 coins. " + timer);
-                    for (int i = 0; i < Screen.TuretArray.size(); i++) {
-                        Screen.TuretArray.get(i).timer = timer;
+                    for (int i = 0; i < Screen.player.TuretArray.size(); i++) {
+                        Screen.player.TuretArray.get(i).timer = timer;
                     }
                 }
             }
@@ -116,7 +116,7 @@ public class UpdateMenu {
                     Screen.money -= 10;
                     turetLimit = turetLimit + 1;
                     turetColVoButton.setText("update turetLimit 10 coins. " + turetLimit);
-                    Screen.player.TuretLimit++;
+                    Screen.TuretLimit++;
                 }
             }
         });
@@ -127,10 +127,10 @@ public class UpdateMenu {
             public void changed(ChangeEvent event, Actor actor) {
                 Screen.stage.clear();
                 Screen.UpDateMenFlag = false;
-               Screen.stage.addActor( Screen.player.tableStats);
-                Screen.stage.addActor( Screen.player.tableControl);
+               Screen.stage.addActor( Screen.tableStats);
+                Screen.stage.addActor( Screen.tableControl);
 
-                Screen.stage.addActor( Screen.player.tableName);
+                Screen.stage.addActor( Screen.tableName);
             }
         });
 

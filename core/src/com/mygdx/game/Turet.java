@@ -20,7 +20,7 @@ double rotation=0;
     TextureAtlas TuretTexture;
 
     public Turet(int cordX, int cordY) {
-        Screen.TuretHP.add(Screen.updateMenu.xp);
+        Screen.player.TuretHP.add(Screen.updateMenu.xp);
         this.dmg = Screen.updateMenu.dmg;
         this.range = Screen.updateMenu.range;
         this.cordX = cordX;
@@ -54,24 +54,24 @@ this.TuretTexture=new TextureAtlas("TuretAtlas.txt");
     }
 
     void fight(int index) {
-        Screen.TuretHP.set(index, Screen.TuretHP.get(index) - 1);
+        Screen.player.TuretHP.set(index, Screen.player.TuretHP.get(index) - 1);
 
     }
 
 
     void Drav(Batch batch, int index) {
 
-        if (Screen.TuretHP.get(index) <= 0) {
-            Screen.TuretArray.remove(index);
-            Screen.TuretHP.remove(index);
-            Screen.player.turetColVo--;
+        if (Screen.player.TuretHP.get(index) <= 0) {
+            Screen.player.TuretArray.remove(index);
+            Screen.player.TuretHP.remove(index);
+            Screen.turetColVo--;
 
         } else {
 
             String name= String.valueOf((int)(rotation / 30)*30);
             Sprite sprite = TuretTexture.createSprite(name);
 
-            sprite.setPosition(cordX - Screen.xMir, cordY - Screen.yMir);
+            sprite.setPosition(cordX - Screen.player.xMir, cordY - Screen.player.yMir);
             sprite.setSize(Gdx.graphics.getWidth()/15, Gdx.graphics.getHeight()/10);
             sprite.draw(batch);
         }
